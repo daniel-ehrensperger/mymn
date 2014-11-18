@@ -1,0 +1,282 @@
+/* global */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body, html {
+	height: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.text {
+	font-family: 'Open Sans', sans-serif; 
+	font-weight: 300;
+	color: #fff;
+	font-size: 1.6em;
+	line-height: 50px;
+	margin: 20px auto 25px auto;
+	display: none;
+}
+
+li {
+	list-style: none;
+}
+
+#wrapper {
+	margin: 0 auto 0 auto;
+	padding: 0px 20px 0 20px;
+	text-align: center;
+}
+
+	/* HIDE */
+	.complete, #join {
+		display: none;
+	}
+
+/* background setup */
+/* fullscreen setup */
+body {
+	background-repeat:no-repeat;
+	background-size: cover;
+	background-position: 50% 0;
+}
+
+/* Navigation */
+#nav {
+	position: absolute;
+	width: 100vw;
+	left: 0;
+	text-transform: uppercase;
+}
+
+#nav ul li {
+	font-family: 'Open Sans', sans-serif;	
+	height: auto;
+	background-color: rgba(88,185,87,0.95);
+}
+
+#nav ul li:nth-child(3) {
+	border-top: 1px #fff solid;
+}
+
+#nav ul li:nth-child(3),
+#nav ul li:nth-child(4),
+#nav ul li:nth-child(5),
+#nav ul li:nth-child(6),
+#nav ul li:nth-child(7),
+#nav ul li:nth-child(8) {
+	display: none;
+}
+
+#nav:target ul li:nth-child(3),
+#nav:target ul li:nth-child(4),
+#nav:target ul li:nth-child(5),
+#nav:target ul li:nth-child(6),
+#nav:target ul li:nth-child(7),
+#nav:target ul li:nth-child(8) {
+	display: block;
+}
+
+nav ul li a {
+	padding: 20px 20px;
+	display: block;
+	font-weight: 300;
+}
+
+nav ul li a:hover {
+	background-color: rgba(88,185,87,0.95);
+	font-weight: 800;
+}
+
+nav ul li {
+	display: block;
+	border-bottom: 1px solid #fff;
+}
+
+/* Nav Toggler */
+nav ul a {
+	padding: 10px 10px;
+}
+
+#nav ul>a:nth-child(1) {
+	display: block;
+}
+
+#nav ul>a:nth-child(2) {
+	display: none;
+	background-color: rgba(88,185,87,0.95);
+}
+
+#nav:target ul>a:nth-child(1) {
+	display: none;
+}
+
+#nav:target ul>a:nth-child(2) {
+	display: block;
+	background-color: rgba(88,185,87,1);
+}
+
+/* Text */
+#alt_in {
+	display: inline-block;
+}
+
+/* Counter */
+h2 {
+	font-family: 'Open Sans', sans-serif; 
+	font-weight: 300;
+	color: #fff;
+	font-size: 1.6em;
+	line-height: 1.8em;
+	padding-top: 60px;
+}
+
+.time {
+	font-weight: 800;
+	font-size: 2.5em;
+	line-height: 1em;
+}
+
+.gametitle {
+	font-weight: 400;
+	font-size: 1.5em;
+
+}
+
+.button {
+	display: block;
+	margin: 20px auto 25px auto;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 800;
+	font-size: 2em;
+	color: #fff;
+	line-height: 50px;
+	width: 200px;
+	height: 50px;
+	border-radius: 5px;
+	background-color: #5CB85C;
+	cursor: pointer;
+	box-shadow: 0px 4px 0px #206c20;
+}
+
+.button:hover {
+	background-color: #7bd97b;
+}
+
+.button:active {
+	box-shadow: 0px 2px 0px #206c20;
+	margin-top: 22px;
+	margin-bottom: 23px;
+	background-color: #5CB85C;
+}
+
+/* Player */
+
+#players {
+	margin: 0 auto;
+	display: none;
+}
+
+.player {
+	margin: 0 5px;
+	display: inline-block;
+	color: rgba(255,255,255,0.5);
+	background-color: rgba(88,185,87,0.5);
+	width: 50px;
+	height: 50px;
+	border-radius: 5px;
+	box-shadow: 0px 4px 0px #206c20;
+}
+
+.active {
+	color: rgba(255,255,255,1);
+	background-color: rgba(88,185,87,1); 
+}
+
+.player i {
+	line-height: 50px;
+	text-align: center;
+}
+
+
+/*Complete*/
+.complete {
+	width: 200px;
+	height: 200px;
+	border-radius: 180px;
+	background-color: #5CB85C;
+	color: #fff;
+	text-align: center;
+	margin: 20px auto;
+
+}
+.complete i{
+	font-size: 10em;
+	line-height: 205px;
+}
+
+/* mediaquery */
+@media screen and (min-width: 768px) {
+	#nav {
+		position: relative;
+		width: auto;
+		margin: 0 auto;
+	}
+
+	#nav ul li {
+		font-family: 'Open Sans', sans-serif;	
+		height: auto;
+		background-color: rgba(88,185,87,0);
+	}
+
+	#nav ul li:nth-child(3) {
+		border-top: none;
+	}
+
+	nav ul li a {
+		padding: 20px 20px;
+		display: block;
+		font-weight: 300;
+	}
+
+	nav ul li a:hover {
+		background-color: rgba(88,185,87,0);
+		font-weight: 800;
+	}
+
+	nav ul li {
+		display: inline-block !important;
+		border-bottom: 0;
+	}
+
+	/* Nav Toggler */
+	nav ul a {
+		padding: 10px 10px;
+	}
+
+	#nav ul>a:nth-child(1) {
+		display: none;
+	}
+
+	#nav ul>a:nth-child(2) {
+		display: none;
+	}
+
+	#nav:target ul>a:nth-child(1) {
+		display: none;
+	}
+
+	#nav:target ul>a:nth-child(2) {
+		display: none;
+	}
+
+	h2 {
+	padding-top: 0;
+	}
+
+}

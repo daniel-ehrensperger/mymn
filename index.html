@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+ 
+	<head>
+		<!-- metainformation -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<title>meet your mates NOW!</title>
+
+		<!-- styles -->
+		<link rel="stylesheet" type="text/css" href="css/mobile.css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,800,400' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+		
+		<!-- javascript -->
+		<script type="text/javascript" href="js/custom.js"></script>
+
+		<!-- jquery -->
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	
+	</head>
+	 
+	<body id="background">
+		
+		<div id="wrapper">
+		<!-- Navigation -->
+		<nav id="nav" class="clearfix">
+			<ul class="clearfix">
+				<a href="#nav" id="pull"><i class="fa fa-navicon fa-3x"></i></a>
+				<a href="#" id="close"><i class="fa fa-times fa-3x"></i></a>
+				<li><a href="#">Game</a></li>
+				<li><a href="#">How-to</a></li>
+				<li><a href="#">Donate</a></li>	
+			</ul>
+		</nav>
+		
+
+		<!-- Counter -->
+		<div id="timer">
+			<h2>meet your mates <span id="alt_in">in</span><br>
+				<span class="time" id="countdown">15:00</span><span id="alt_min"> min.</span><br>for<br><span class="gametitle">T&ouml;ggele</span>
+			</h2>
+		</div>
+
+		<!-- Initiant -->
+		<a onclick="startCountdown()" id="now" class="button">LAUNCH</a>
+
+		<!-- Join -->
+		<a id="join" class="button">JOIN</a>
+		<p id="playerComplete" class="text">all seats taken</p>
+
+		<!-- Players -->
+		<div id="players">
+			<div id="p1" class="player active"><i class="fa fa-user fa-2x"></i></div>
+			<div id="p2" class="player"><i class="fa fa-user fa-2x"></i></div>
+			<div id="p3" class="player"><i class="fa fa-user fa-2x"></i></div>
+			<div id="p4" class="player"><i class="fa fa-user fa-2x"></i></div>
+		</div>
+
+		<!-- Complete -->
+		<div class="complete"><i class="fa fa-check"></i></div>
+
+		<!-- javascript -->
+
+		<!-- Random Background -->
+		<script type="text/javascript">
+		 var images = ['../images/bg_kicker_01.jpg', '../images/bg_kicker_02.jpg', '../images/bg_kicker_03.jpg', '../images/bg_kicker_04.jpg', '../images/bg_kicker_05.jpg'];
+		 $('#background').css({'background-image': 'url(images/' + images[Math.floor(Math.random() * images.length)] + ')'});
+		</script>
+
+		<!-- Countdown -->
+		<script type="text/javascript">
+		var seconds = 20;
+		var secondPassed = function() {
+  	    	var minutes = Math.floor(seconds/60);
+		    var remainingSeconds = seconds % 60;
+		    if (remainingSeconds < 10) {
+		        remainingSeconds = "0" + remainingSeconds;  
+			}
+		    document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
+		    if (seconds == 0) {
+		    	clearInterval(secondPassed);
+		        document.getElementById('countdown').innerHTML = "NOW!";
+		       	document.getElementById('alt_in').style.display = "none";
+		       	document.getElementById('alt_min').style.display = "none";
+		    } else {
+		        seconds--;
+
+		 	} 
+		}
+		function startCountdown() {
+			var countdownTimer = setInterval(function(){secondPassed()}, 1000);
+			document.getElementById('now').style.display = "none";
+			document.getElementById('players').style.display = "block";
+			document.getElementById('join').style.display = "block";
+		}
+		</script>
+
+		<!-- Join -->
+		<script type="text/javascript">
+		$(function(){
+		    var hits = 1; //->variable
+		    // Everything below this line is called "binding" a handler to an event (click event)
+		    $('#join').click(function(){ // --> This whole function is the handler or listener
+				if  (hits === 3) {
+					$('#p4').addClass("active");
+					document.getElementById('join').style.display = "none";
+					document.getElementById('playerComplete').style.display = "block";
+				} if (hits === 2){
+					$('#p3').addClass("active");
+				} if (hits === 1) {
+					$('#p2').addClass("active");
+				} 
+			hits++;
+			return false;
+		    });
+		});
+		</script>
+
+	</body>
+</html>
