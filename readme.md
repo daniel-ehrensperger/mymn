@@ -1,1 +1,1 @@
-Thats my Work. Lorem ipsum dolor sit amet.
+This app should bring for players together to play kicker.
